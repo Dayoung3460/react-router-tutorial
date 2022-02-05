@@ -2,8 +2,8 @@ import './App.css';
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
-import Profile from "./Profile";
 import Profiles from "./Profiles";
+import HistorySample from "./HistorySample";
 
 function App() {
   return (
@@ -18,11 +18,15 @@ function App() {
         <li>
           <Link to="/profiles">Profiles</Link>
         </li>
+        <li>
+          <Link to="/history">History Example</Link>
+        </li>
       </ul>
       <Routes>
         <Route path="/" exact={true} element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/profiles/*" element={<Profiles/>}/>
+        <Route path="/history" element={<HistorySample/>}/>
       </Routes>
     </div>
 
