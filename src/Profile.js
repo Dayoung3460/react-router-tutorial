@@ -14,6 +14,7 @@ const data = {
 
 const Profile = () => {
   const match = useParams()
+
   const { username } = match
   const profile = data[username]
   if(!profile) {
