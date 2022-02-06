@@ -1,11 +1,13 @@
 import './App.css';
-import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Link, Route, Routes, useLocation} from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
 import Profiles from "./Profiles";
 import HistorySample from "./HistorySample";
 
 function App() {
+  let location = useLocation()
+
   return (
     <div>
       <ul>
@@ -27,6 +29,12 @@ function App() {
         <Route path="/about" element={<About/>}/>
         <Route path="/profiles/*" element={<Profiles/>}/>
         <Route path="/history" element={<HistorySample/>}/>
+        <Route path="/*" element={
+          <div>
+            <h1>Not Found</h1>
+            <p>{location.pathname}</p>
+          </div>
+          }/>
       </Routes>
     </div>
 
